@@ -10,7 +10,7 @@ services:
       MYSQL_USER: rails
       MYSQL_PASSWORD: 12345
     ports:
-      - "3310:3306"
+      - "3312:3306"
     volumes:
       - db_data:/var/lib/mysql
 

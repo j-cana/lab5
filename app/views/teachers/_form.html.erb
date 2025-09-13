@@ -32,10 +32,10 @@
   </div>
 
   <div>
-    <%= form.label :department.name, "Department", style: "display: block" %>
-    <%= form.collection_select :department_id, Department.all, :id, :name, prompt: "Select a Department" %>
+    <%= form.label :department_id, "Department", style: "display: block" %>
+    <%= form.collection_select :department_id, Department.all, :id, :name, prompt: "Select a department" %>
   </div>
-  
+
   <div>
     <%= form.submit %>
   </div>

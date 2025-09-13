@@ -3,8 +3,10 @@
 <%= render @subject %>
 
 
-<% @subject.section.each do | section | %>
-  <h3>Section: <%= section.name %> Room <%= section.room %> Time Slot: <%= section.time_slot %></h3>
+<% @subject.sections.each do | section | %>
+  <h3>Section: <%= section.name %> 
+  <h3>Room: <%= section.room %> 
+  <h3>Time Slot: <%= section.time_slot %></h3>
   <table>
     <thead>
       <tr>
