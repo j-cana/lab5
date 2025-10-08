@@ -25,6 +25,8 @@ class ClasslistsController < ApplicationController
 
     respond_to do |format|
       if @classlist.save
+        @classlist.section.increment!(:number_of_students)
+        @classlist.student.increment!(:number_of_units, @classlist.section.subject.number_of_units)
         format.html { redirect_to @classlist, notice: "Classlist was successfully created." }
         format.json { render :show, status: :created, location: @classlist }
       else
@@ -50,7 +52,8 @@ class ClasslistsController < ApplicationController
   # DELETE /classlists/1 or /classlists/1.json
   def destroy
     @classlist.destroy!
-
+    @classlist.section.decrement!(:number_of_students)
+    @classlist.student.decrement!(:number_of_units, @classlist.section.subject.number_of_units)
     respond_to do |format|
       format.html { redirect_to classlists_path, status: :see_other, notice: "Classlist was successfully destroyed." }
       format.json { head :no_content }
@@ -59,12 +62,9 @@ class ClasslistsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-  def set_classlist
-    @classlist = Classlist.find_by(id: params[:id])
-    unless @classlist
-      redirect_to classlists_path, alert: "Classlist not found"
+    def set_classlist
+      @classlist = Classlist.find(params[:id])
     end
-  end
 
     # Only allow a list of trusted parameters through.
     def classlist_params

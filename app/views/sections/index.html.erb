@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Room</th>
       <th>Time Slot</th>
+      <th>Number of Student</th>
       <th>Show</th>
     </tr>
   </thead>
@@ -17,6 +18,8 @@
         <td><%= section.name %></td>
         <td><%= section.room %></td>
         <td><%= section.time_slot %></td>
+        <td><%= section.number_of_students %></td>
+        
         <td><%= link_to "Show this section", section %></td>
       </tr>
     <% end %>
