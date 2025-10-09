@@ -27,6 +27,10 @@ class SectionsController < ApplicationController
       if @section.save
         format.html { redirect_to @section, notice: "Section was successfully created." }
         format.json { render :show, status: :created, location: @section }
+
+       teacher = @section.subject.teacher
+       total_units = teacher.subjects.sum(:number_of_units)
+       teacher.update(number_of_units: total_units, monthly_salary: total_units * 2000)
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @section.errors, status: :unprocessable_entity }
@@ -50,6 +54,14 @@ class SectionsController < ApplicationController
   # DELETE /sections/1 or /sections/1.json
   def destroy
     @section.destroy!
+
+   # @section.subject.teacher!(:number_of_units, @section.subject.number_of_units) 
+   # monthlySalary = @section.subject.teacher.number_of_units * 2000
+   # @section.subject.teacher.update(monthly_salary: monthlySalary)
+
+    teacher = @section.subject.teacher
+    total_units = teacher.subjects.sum(:number_of_units)
+    teacher.update(number_of_units: total_units, monthly_salary: total_units * 2000)
 
     respond_to do |format|
       format.html { redirect_to sections_path, notice: "Section was successfully destroyed.", status: :see_other }
