@@ -1,26 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="mb-3">Students</h1>
 
-<h1>List of Students</h1>
-
-<table>
-  <thead>
+<table class="table table-bordered table-striped">
+  <thead class="table-dark">
     <tr>
       <th>Name</th>
-      <th>Year</th>
+      <th>Year Level</th>
       <th>Program</th>
-      <th>Show</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @students.each do | student | %>
+    <% @students.each do |student| %>
       <tr>
         <td><%= student.name %></td>
         <td><%= student.year_level %></td>
         <td><%= student.program %></td>
-        <td><%= link_to "Show this student", student %></td>
+        <td>
+          <%= link_to "Show", student, class: "btn btn-sm btn-primary" %>
+          <%= link_to "Edit", edit_student_path(student), class: "btn btn-sm btn-warning" %>
+          <%= link_to "Delete", student, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "New student", new_student_path %>
+<%= link_to "New Student", new_student_path, class: "btn btn-warning mt-3" %>
