@@ -1,8 +1,9 @@
-<div class="card shadow-sm">
-  <div class="card-header bg-light">
+<div class="card shadow-sm" style="border-color: #F9CBDF; border-width: 2px;">
+  <div class="card-header text-center" style="background-color: #794C9E; color: white;">
     <h5 class="mb-0"><%= student.new_record? ? "New Student" : "Edit Student" %></h5>
   </div>
-  <div class="card-body">
+
+  <div class="card-body" style="background-color: #F6F0FA;">
     <%= form_with(model: student) do |f| %>
 
       <% if student.errors.any? %>
@@ -15,26 +16,36 @@
           </ul>
         </div>
       <% end %>
+
       <div class="mb-3">
-        <%= f.label :name, class: "form-label fw-bold" %>
-        <%= f.text_field :name, class: "form-control", placeholder: "Enter student name" %>
+        <%= f.label :name, class: "form-label fw-bold", style: "color: #29264C;" %>
+        <%= f.text_field :name, class: "form-control", style: "border-color: #B89AC9;" , placeholder: "Enter student name" %>
       </div>
+
       <div class="mb-3">
-        <%= f.label :year_level, class: "form-label fw-bold" %>
-        <%= f.number_field :year_level, class: "form-control", placeholder: "Enter current year level" %>
+        <%= f.label :year_level, class: "form-label fw-bold", style: "color: #29264C;" %>
+        <%= f.number_field :year_level, class: "form-control", style: "border-color: #B89AC9;", placeholder: "Enter current year level" %>
       </div>
+
       <div class="mb-3">
-        <%= f.label :program, class: "form-label fw-bold" %>
-        <%= f.text_field :program, class: "form-control", placeholder: "Enter program/course" %>
+        <%= f.label :program, class: "form-label fw-bold", style: "color: #29264C;" %>
+        <%= f.text_field :program, class: "form-control", style: "border-color: #B89AC9;", placeholder: "Enter program/course" %>
       </div>
+
       <div class="mb-3">
-        <%= f.label :department_id, "Department", class: "form-label fw-bold" %>
+        <%= f.label :department_id, "Department", class: "form-label fw-bold", style: "color: #29264C;" %>
         <%= f.collection_select :department_id, Department.all, :id, :name,
             { prompt: "Select a department" },
-            { class: "form-select" } %>
+            { class: "form-select", style: "border-color: #B89AC9;" } %>
       </div>
-      <div class="text-end">
-        <%= f.submit(student.new_record? ? "Create Student" : "Update Student", class: "btn btn-primary") %>
+
+      <div class="text-end mt-4">
+        <%= f.submit(
+              student.new_record? ? "Create Student" : "Update Student",
+              class: "btn btn-sm",
+              style: "background-color: #6E3883; color: white; border: none;"
+            ) %>
+        <%= link_to "Back", students_path, class: "btn btn-sm", style: "background-color: #B56AB2; color: white; border: none; margin-left: 8px;" %>
       </div>
     <% end %>
   </div>

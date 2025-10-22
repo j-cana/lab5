@@ -1,28 +1,30 @@
-<h1 class="mb-3">Students</h1>
+<h1 class="mb-5"/h1>
+<h1 class="mb-2 text-center" style="color: #29264C;">Students</h1>
 
-<table class="table table-bordered table-striped">
-  <thead class="table-dark">
+<table class="table table-bordered text-center" style="border-color: #F9CBDF;">
+  <thead>
     <tr>
-      <th>Name</th>
-      <th>Year Level</th>
-      <th>Program</th>
-      <th>Actions</th>
+      <th style="background-color: #794C9E; font-weight: 600;">Name</th>
+      <th style="background-color: #794C9E; font-weight: 600;">Year Level</th>
+      <th style="background-color: #794C9E; font-weight: 600;">Program</th>
+      <th style="background-color: #794C9E; font-weight: 600;">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.name %></td>
+       <td style="background-color: #B89AC9; font-weight: 500;"><%= student.name %></td>
         <td><%= student.year_level %></td>
         <td><%= student.program %></td>
         <td>
-          <%= link_to "Show", student, class: "btn btn-sm btn-primary" %>
-          <%= link_to "Edit", edit_student_path(student), class: "btn btn-sm btn-warning" %>
-          <%= link_to "Delete", student, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+          <%= link_to "Show", student, class: "btn btn-sm", style: "background-color: #6E3883; color: white; border-color: #794C9E;" %>
+          <%= link_to "Edit", edit_student_path(student), class: "btn btn-sm", style: "background-color: #B56AB2; color: white; border: none;" %>
+          <%= link_to "Delete", student, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm", style: "background-color: #B04F6C; color: white; border: none;" %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "New Student", new_student_path, class: "btn btn-warning mt-3" %>
+<%= link_to "New Student", new_student_path, class: "btn btn-warning mt-3", style: "background-color: #905F9E; color: white; border: none;" %>
+

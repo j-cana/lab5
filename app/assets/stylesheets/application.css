@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+/* Use the Newsreader font throughout your app */
+body {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Optional — make navbar and offcanvas use Newsreader */
+.navbar, .offcanvas {
+  font-family: "Newsreader", serif;
+  font-weight: 500;
+}
+
+/* Make headings slightly bolder */
+h1, h2, h3, .navbar-brand {
+  font-weight: 700;
+}
+
+
