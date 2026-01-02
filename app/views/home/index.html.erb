@@ -1,0 +1,155 @@
+<div id="schoolCarousel" class="carousel slide carousel-fade mb-5 shadow-sm" data-bs-ride="carousel" data-bs-interval="4000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag "adnu1.png", class: "d-block w-100"%>
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+        <h2 class="fw-bold text-white">Welcome to School Manager</h2>
+        <p>Empowering your school community through organized and efficient management.</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <%= image_tag "adnu2.jpeg", class: "d-block w-100" %>
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+        <h2 class="fw-bold text-white">Engaged Students</h2>
+        <p>Fostering collaboration and learning through modern educational tools.</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <%= image_tag "adnu3.jpeg", class: "d-block w-100" %>
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+        <h2 class="fw-bold text-white">Modern Campus Facilities</h2>
+        <p>Technology-driven spaces designed for learning and growth.</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#schoolCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#schoolCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#schoolCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#schoolCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#schoolCarousel" data-bs-slide-to="2"></button>
+  </div>
+</div>
+
+<section id="news" class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center text-primary fw-bold mb-4">
+      Latest News
+    </h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              New Academic Year Begins
+            </h5>
+            <p class="text-muted">
+              The new semester starts next week! Students should check their class schedules early.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              Library Renovation
+            </h5>
+            <p class="text-muted">
+              The library is being upgraded with new facilities for a better learning experience.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              Teacher Orientation
+            </h5>
+            <p class="text-muted">
+              Welcome to our new faculty members! Orientation is scheduled this Friday at the Main Hall.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="courses" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="text-success fw-bold mb-4">Courses Offered</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="card-title">BS Computer Engineering</h5>
+            <p class="text-muted">Learn hardware, software, and embedded systems for the modern world.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="card-title">BS Information Technology</h5>
+            <p class="text-muted">Master networking, databases, and software development technologies.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="card-title">BS Education</h5>
+            <p class="text-muted">Train to become professional educators ready for the digital era.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="highlights" class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center text-info fw-bold mb-5">Campus Highlights</h2>
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <%= image_tag "adnu2.jpg", class: "img-fluid rounded shadow-sm" %>
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-bold">Vibrant Campus Life</h4>
+        <p class="text-muted mb-4">
+          Our campus promotes growth, collaboration, and creativity among students. Join activities and organizations that shape leaders.
+        </p>
+        <h4 class="fw-bold">Modern Facilities</h4>
+        <p class="text-muted">
+          Equipped with high-end laboratories, computer centers, and libraries to enhance academic excellence.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-1">© <%= Time.current.year %> School Manager | All Rights Reserved</p>
+    <small class="text-muted">Developed using Ruby on Rails & Bootstrap</small>
+  </div>
+</footer>
